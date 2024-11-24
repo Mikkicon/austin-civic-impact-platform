@@ -19,6 +19,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.5.1",
+    "env-cmd": "^10.1.0",
     "llama-stack-client": "^0.0.35",
     "lucide-react": "^0.460.0",
     "mongodb": "^6.11.0",

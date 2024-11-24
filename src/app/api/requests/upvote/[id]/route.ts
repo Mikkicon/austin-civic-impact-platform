@@ -2,16 +2,14 @@ import { NextResponse } from 'next/server'
 import client from '@/lib/mongodb'
 import { ObjectId } from 'mongodb'
 
-export async function POST(
-    request: Request,
-    { params }: { params: { id: string } }
-) {
+export async function POST(request: Request) {
     try {
         await client.connect()
         const db = client.db("acip")
 
         const result = await db.collection("requests").updateOne(
-            { _id: new ObjectId(params.id) },
+            // @ts-expect-error afsdfa
+            { _id: new ObjectId(request.nextUrl.searchParams) },
             { $inc: { upvoteCount: 1 } }
         )
 

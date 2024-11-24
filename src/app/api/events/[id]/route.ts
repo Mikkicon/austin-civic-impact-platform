@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import client from '@/lib/mongodb';
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, { params }) {
     try {
         await client.connect();
         const db = client.db("acip");
